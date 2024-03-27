@@ -17,7 +17,7 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../client/build')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 // Routes
 app.use("/api/v1/auth", authRoute);
@@ -37,10 +37,9 @@ connectDatabase()
     process.exit(1);
   });
 
-app.use('*' , function (req,res) {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'))
-})
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // Server
 const PORT = process.env.PORT || 3000; 
