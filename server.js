@@ -7,9 +7,9 @@
 
 const express = require("express");
 const connectDatabase = require("./database/database");
-const authRoute = require("../backend/routes/authRoute")
-const CategoryRoutes = require("../backend/routes/CategoryRoutes")
-const ProductRoutes = require("../backend/routes/ProductRoutes")
+const authRoute = require("./routes/authRoute")
+const CategoryRoutes = require("./routes/CategoryRoutes")
+const ProductRoutes = require("./routes/ProductRoutes")
 const cors = require("cors")
 const path = require("path")
 const app = express();
